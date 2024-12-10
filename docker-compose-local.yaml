@@ -4,13 +4,25 @@ services:
     image: postgres:16-alpine
     restart: always
     environment:
-      - POSTGRES_USER=gostok
-      - POSTGRES_PASSWORD=goStok[@o
-      - POSTGRES_DB=fastapi_practice
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=fastapi_practice_db
     ports:
       - "5432:5432"
     networks:
       - custom
+  db_test:
+    container_name: "db_test"
+    image: postgres:16-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres_test
+      - POSTGRES_PASSWORD=postgres_test
+      - POSTGRES_DB=fastapi_practice_db_test
+    ports:
+      - "5433:5432"
+    networks:
+    - custom
 networks:
   custom:
     driver: bridge

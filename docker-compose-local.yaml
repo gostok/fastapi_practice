@@ -1,14 +1,14 @@
 services:
   db:
     container_name: "db"
-    image: postgres:14.15-alpine
+    image: postgres:16-alpine
     restart: always
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=postgres
+      - POSTGRES_USER=gostok
+      - POSTGRES_PASSWORD=goStok[@o
+      - POSTGRES_DB=fastapi_practice
     ports:
-      - "5433:5433"
+      - "5432:5432"
     networks:
       - custom
 networks:
